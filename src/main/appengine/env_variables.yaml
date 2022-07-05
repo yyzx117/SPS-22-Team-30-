@@ -1,0 +1,9 @@
+env_variables:
+  GOOGLE_MAPS_API_KEY: AIzaSyAmruVopfx8McjpT2XJYdYpcvNvhgRhVII
+
+  includes:
+    - /home/psethbhakdi/software-product-sprint/portfolio/src/main/appengine/env_variables.yaml
+
+
+
+    
