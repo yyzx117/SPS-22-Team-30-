@@ -11,6 +11,10 @@
     <!--FOR THE SNAPSHOT-->
     <input type="button" value="Take a Snap" id="btPic" onclick="takeSnapShot()" /> 
     <p id="snapShot"></p>
+    <!--FOR UPLOADING IMAGES-->
+    <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+    <br>
+    <img id="uploadPreview" style="width: 100px; height: 100px; display: none;" />
 </body>
 
 <script>
@@ -29,7 +33,21 @@
             document.getElementById('snapShot').innerHTML = 
                 '<img src="' + data_uri + '" width="70px" height="50px" />';
         });
+        
     }
+    // SHOW THE SNAPSHOT File.
+    function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview").style.display = "inline-block" 
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+        };
+    };
+
+
+
 </script>
 
 <!--For Uploading pictures-->

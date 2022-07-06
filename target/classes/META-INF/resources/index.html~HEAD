@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <title>Capture picture from your webcam</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
+</head>
+
+<body>
+    <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
+    <p>Hello</p>
+    <!--FOR THE SNAPSHOT-->
+    <input type="button" value="Take a Snap" id="btPic" onclick="takeSnapShot()" /> 
+    <p id="snapShot"></p>
+    <!--FOR UPLOADING IMAGES-->
+    <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+    <br>
+    <img id="uploadPreview" style="width: 100px; height: 100px; display: none;" />
+</body>
+
+<script>
+    // CAMERA SETTINGS.
+    Webcam.set({
+        width: 220,
+        height: 190,
+        image_format: 'jpeg',
+        jpeg_quality: 100
+    });
+    Webcam.attach('#camera');
+
+    // SHOW THE SNAPSHOT.
+    takeSnapShot = function () {
+        Webcam.snap(function (data_uri) {
+            document.getElementById('snapShot').innerHTML = 
+                '<img src="' + data_uri + '" width="70px" height="50px" />';
+        });
+        
+    }
+    // SHOW THE SNAPSHOT File.
+    function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview").style.display = "inline-block" 
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+        };
+    };
+
+
+
+</script>
+
+<!--For Uploading pictures-->
+<form action="/action_page.php">
+
+    <input type="file" id="myFile" name="filename" accept="image/png, image/jpeg, image/jpg"/>
+    <br/>
+    <p></p>
+    <button type="submit" id="uploadButton"> Submit </button>
+    <img id="upload">
+    <p></p>
+</form>
+
+</html>
