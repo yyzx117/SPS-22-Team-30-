@@ -12,14 +12,9 @@
     <input type="button" value="Take a Snap" id="btPic" onclick="takeSnapShot()" /> 
     <p id="snapShot"></p>
     <!--FOR UPLOADING IMAGES-->
-    <form action="/action_page.php" 
-        enctype="multipart/form-data">
-          
-        <label for="myfile">Upload an image:</label>
-        <input type="file" id="myfile" name="myfile" />
-        <br /><br />
-        <input type="submit" />
-    </form>
+    <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+    <br>
+    <img id="uploadPreview" style="width: 100px; height: 100px;" />
 </body>
 
 <script>
@@ -38,7 +33,20 @@
             document.getElementById('snapShot').innerHTML = 
                 '<img src="' + data_uri + '" width="70px" height="50px" />';
         });
+        
     }
+    // SHOW THE SNAPSHOT File.
+    function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+        };
+    };
+
+
+
 </script>
 
 
