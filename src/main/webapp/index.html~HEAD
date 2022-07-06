@@ -46,9 +46,19 @@
         };
     };
 
+
+
 </script>
 
-<a href="https://summer22-sps-30.appspot.com/page_2">Page 2</a>
+<!--For Uploading pictures-->
+<form action="/action_page.php">
 
+    <input type="file" id="myFile" name="filename" accept="image/png, image/jpeg, image/jpg"/>
+    <br/>
+    <p></p>
+    <button type="submit" id="uploadButton"> Submit </button>
+    <img id="upload">
+    <p></p>
+</form>
 
 </html>
