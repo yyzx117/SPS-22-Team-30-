@@ -3,18 +3,22 @@
 <head>
     <title>Capture picture from your webcam</title>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
     <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
     <p>Hello</p>
     <!--FOR THE SNAPSHOT-->
-    <input type="button" value="Take a Snap" id="btPic" onclick="takeSnapShot()" /> 
+    <input type="button" value="Take a Snap" id="btPic" onclick="takeSnapShot(); sendRandomLetters();" /> 
+    <div id="letter-container"></div>
     <p id="snapShot"></p>
     <!--FOR UPLOADING IMAGES-->
     <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
     <br>
     <img id="uploadPreview" style="width: 100px; height: 100px; display: none;" />
+
+    <br>
 </body>
 
 <script>
