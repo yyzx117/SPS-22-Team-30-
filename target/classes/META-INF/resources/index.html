@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Capture picture from your webcam</title>
+    <h1>Capture picture from your webcam</h1>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
     <script src="script.js"></script>
 </head>
@@ -30,25 +31,6 @@
         jpeg_quality: 100
     });
     Webcam.attach('#camera');
-
-    // SHOW THE SNAPSHOT.
-    takeSnapShot = function () {
-        Webcam.snap(function (data_uri) {
-            document.getElementById('snapShot').innerHTML = 
-                '<img src="' + data_uri + '" width="70px" height="50px" />';
-        });
-        
-    }
-    // SHOW THE SNAPSHOT File.
-    function PreviewImage() {
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
-
-        oFReader.onload = function (oFREvent) {
-            document.getElementById("uploadPreview").style.display = "inline-block" 
-            document.getElementById("uploadPreview").src = oFREvent.target.result;
-        };
-    };
 
 </script>
 
