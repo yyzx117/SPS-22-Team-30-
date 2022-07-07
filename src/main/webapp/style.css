@@ -1,5 +1,5 @@
 body {
-    background-image: url(./images/asl1.jpg);
+    background-color: #f0dfcf;
 }
 #content {
     position:absolute;
@@ -11,10 +11,10 @@ body {
 }
 #background {
     position:absolute;
-    left: 900px;
+    left: 800px;
     top: 200px;
-    height: 500px;
-    width: 750px;
+    height: 400px;
+    width: 600px;
 }
 
 
