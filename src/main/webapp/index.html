@@ -1,41 +1,69 @@
 <!doctype html>
 <html>
 <head>
-    <title>Capture picture from your webcam</title>
-    <h1>Capture picture from your webcam</h1>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
-    <script src="script.js"></script>
+    <title>ASL Translator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
 </head>
 
 <body>
-    <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
-    <p>Hello</p>
-    <!--FOR THE SNAPSHOT-->
-    <input type="button" value="Take a Snap" id="btPic" onclick="takeSnapShot();" /> 
-    <p id="snapShot"></p>
-    <div id="letter-container"></div>
-    <!--FOR UPLOADING IMAGES-->
-    <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
-    <br>
-    <img id="uploadPreview" style="width: 100px; height: 100px; display: none;" />
+    <div id="content">
+        <div id="intro">
+            <p id="asl"> ASL Translator</p>
+            <P id="author"> by SPS 22' Team 30</P>
+        </div>
+        <div id="camera"></div>
+        <!--FOR THE SNAPSHOT-->
+        <input id="take" type="button" value="Take a Snap" id="btPic" onclick="takeSnapShot()" /> 
+        <p id="snapShot"></p>
+        <!--FOR UPLOADING IMAGES-->
+        <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage()" />
+        <p id="uploadPreview"></p>
 
-    <br>
+        <!--JUMP TO PAGE 2-->
+        <input id="submit" type="button" value="Submit" onclick="jumpToPage2()"/>
+    </div>
 </body>
 
 <script>
     // CAMERA SETTINGS.
     Webcam.set({
-        width: 220,
-        height: 190,
+        width: 396,
+        height: 343,
         image_format: 'jpeg',
         jpeg_quality: 100
     });
     Webcam.attach('#camera');
 
+    // SHOW THE SNAPSHOT.
+    takeSnapShot = function () {
+        Webcam.snap(function (data_uri) {
+            document.getElementById("uploadPreview").style.display = "none";
+            document.getElementById("snapShot").style.display = "inline-block";
+            document.getElementById('snapShot').innerHTML = 
+                '<img src="' + data_uri + '" width=40% height=40% />';
+        });
+    }
+
+    // SHOW THE Upload File.
+    function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        oFReader.onload = function (e) {
+            /*document.getElementById("uploadPreview").style.display = "inline-block" 
+            document.getElementById("uploadPreview").src = oFREvent.target.result;*/
+
+            document.getElementById("snapShot").style.display = "none";
+            document.getElementById("uploadPreview").style.display = "inline-block";
+            document.getElementById("uploadPreview").innerHTML = '<img src="'+e.target.result+'" height=30% width=30%>';
+        };
+    }
+
+    //JUMP TO PAGE 2
+    function jumpToPage2() {
+        window.location.href="page_2.html";
+    }
 </script>
-
-<a href="page_2.html">Page 2</a>
-
-
 </html>
