@@ -1,0 +1,86 @@
+body {
+    background-image: url(./images/asl1.jpg);
+}
+#content {
+    position:absolute;
+    left: 70px;
+    top: 40px;
+    width: 650px;
+    background: white;
+    height: 850px;
+}
+#background {
+    position:absolute;
+    left: 900px;
+    top: 200px;
+    height: 500px;
+    width: 750px;
+}
+
+
+#intro {
+    position:absolute;
+    top: 10px;
+    left: 200px;
+}
+#asl {
+    font-family: 'Brush Script MT', cursive;
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+}
+#author {
+    font-family: 'Brush Script MT', cursive;
+    position: absolute;
+    text-align: center;
+    font-size:18px;
+    top: 70px;
+    left: 45px;
+}
+
+
+#camera {
+    position: absolute;
+    top:135px;
+    left: 110px;
+    text-align:left;
+}
+#take {
+    position: absolute;
+    top: 470px;
+    left: 120px;
+    height: 50px;
+    width: 100px;
+    border-radius: 10%;
+}
+
+#uploadImage {
+    position: absolute;
+    top: 470px;
+    left: 310px;
+}
+input::file-selector-button {
+    height: 50px;
+    width: 100px;
+    border-radius: 10%;
+}
+
+#snapShot {
+    position: absolute;
+    top: 550px;
+    left: 110px;
+}
+#uploadPreview{
+    position: absolute;
+    top: 550px;
+    left: 110px;
+}
+
+#submit {
+    position:absolute;
+    top:750px;
+    left: 250px;
+    height: 30px;
+    width: 80px;
+    border-radius: 10%;
+}
