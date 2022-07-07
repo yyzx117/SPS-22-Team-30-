@@ -11,7 +11,6 @@ function sendRandomLetters() {
     console.log(letter);
 }
 
-
 // SHOW THE SNAPSHOT.
 takeSnapShot = function () {
     Webcam.snap(function (data_uri) {
@@ -30,3 +29,4 @@ function PreviewImage() {
         document.getElementById("uploadPreview").src = oFREvent.target.result;
     };
 };
+
