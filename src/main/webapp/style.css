@@ -1,3 +1,90 @@
+body {
+    background-image: url(./images/asl1.jpg);
+}
+#content {
+    position:absolute;
+    left: 70px;
+    top: 40px;
+    width: 650px;
+    background: white;
+    height: 850px;
+}
+#background {
+    position:absolute;
+    left: 900px;
+    top: 200px;
+    height: 500px;
+    width: 750px;
+}
+
+
+#intro {
+    position:absolute;
+    top: 10px;
+    left: 200px;
+}
+#asl {
+    font-family: 'Brush Script MT', cursive;
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+}
+#author {
+    font-family: 'Brush Script MT', cursive;
+    position: absolute;
+    text-align: center;
+    font-size:18px;
+    top: 70px;
+    left: 45px;
+}
+
+
+#camera {
+    position: absolute;
+    top:135px;
+    left: 110px;
+    text-align:left;
+}
+#take {
+    position: absolute;
+    top: 470px;
+    left: 120px;
+    height: 50px;
+    width: 100px;
+    border-radius: 10%;
+}
+
+#uploadImage {
+    position: absolute;
+    top: 470px;
+    left: 310px;
+}
+input::file-selector-button {
+    height: 50px;
+    width: 100px;
+    border-radius: 10%;
+}
+
+#snapShot {
+    position: absolute;
+    top: 550px;
+    left: 110px;
+}
+#uploadPreview{
+    position: absolute;
+    top: 550px;
+    left: 110px;
+}
+
+#submit {
+    position:absolute;
+    top:750px;
+    left: 250px;
+    height: 30px;
+    width: 80px;
+    border-radius: 10%;
+}
+
 /* Container holding the image and the text */
 .container {
     position: relative;
@@ -12,78 +99,3 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-
-
-  #content {
-    margin-left: auto;
-    margin-right: auto;
-    width: 650px;
-    background: white;
-    height: 2200px;
-}
-
-
-#intro {
-    position:absolute;
-    top: 10px;
-}
-#asl {
-    position: relative;
-    text-align: center;
-    font-size: 40px;
-}
-#author {
-    position: absolute;
-    text-align: center;
-    font-size:18px;
-    top: 70px;
-    left: 45px;
-}
-
-
-#camera {
-    position: absolute;
-    top:135px;
-    left: 615px;
-    text-align:left;
-}
-#take {
-    position: absolute;
-    top: 390px;
-    left: 630px;
-    height: 50px;
-    width: 100px;
-    border-radius: 10%;
-}
-
-#uploadImage {
-    position: absolute;
-    top: 390px;
-    left: 780px;
-}
-input::file-selector-button {
-    height: 50px;
-    width: 100px;
-    border-radius: 10%;
-}
-
-#snapShot {
-    position: absolute;
-    top: 450px;
-    left: 615px;
-}
-#uploadPreview{
-    position: absolute;
-    top: 450px;
-    left: 615px;
-}
-
-#submit {
-    position:absolute;
-    top:785px;
-    left: 725px;
-    height: 30px;
-    width: 80px;
-    border-radius: 10%;
-}
