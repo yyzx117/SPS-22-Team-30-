@@ -5,13 +5,14 @@
     <h1>Capture picture from your webcam</h1>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
     <p>Hello</p>
     <!--FOR THE SNAPSHOT-->
-    <input type="button" value="Take a Snap" id="btPic" onclick="takeSnapShot(); sendRandomLetters();" /> 
+    <input type="button" value="Take a Snap" id="btPic" onclick="takeSnapShot();" /> 
     <p id="snapShot"></p>
     <div id="letter-container"></div>
     <!--FOR UPLOADING IMAGES-->

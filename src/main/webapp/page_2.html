@@ -5,12 +5,29 @@
     <title>Your Translation: "ASL Translation (from function)</title>
     <h1>Your Translation: "ASL Translation (from function)</h1>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <script>
+        ConvertImage();
+    </script>
+
     <div class="container">
-        <img src="img_snow_wide.jpg" alt="Snow" style="width:100%;">
-        <div class="centered">Centered</div>
+        <p id="snapShot"></p>
+        <div class="centered">
+            <script>
+                sendRandomLetters()
+            </script>
+        </div>
+
+
+        <img id="uploadPreview" style="width: 100px; height: 100px; display: none;" />
+        <div class="centered">
+            <script>
+                sendRandomLetters()
+            </script>
+        </div>
     </div>
 
 </body>

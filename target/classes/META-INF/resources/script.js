@@ -14,10 +14,9 @@ function sendRandomLetters() {
 // SHOW THE SNAPSHOT.
 takeSnapShot = function () {
     Webcam.snap(function (data_uri) {
-        document.getElementById('snapShot').innerHTML = 
-            '<img src="' + data_uri + '" width="70px" height="50px" />';
+        node = document.getElementById('snapShot')
+        node.innerHTML = '<img src="' + data_uri + '" width="70px" height="50px" />';
     });
-    
 }
 // SHOW THE SNAPSHOT File.
 function PreviewImage() {
@@ -28,5 +27,8 @@ function PreviewImage() {
         document.getElementById("uploadPreview").style.display = "inline-block" 
         document.getElementById("uploadPreview").src = oFREvent.target.result;
     };
+    
 };
-
+function ConvertImage(){
+    takeSnapShot.call(node);    
+}
