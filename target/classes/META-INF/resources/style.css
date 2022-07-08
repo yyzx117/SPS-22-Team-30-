@@ -29,6 +29,19 @@ body {
     text-align: center;
     font-size: 40px;
 }
+#mid {
+    position:absolute;
+    top: 150px;
+    left: 120px;
+}
+
+#your-asl {
+    font-family: 'Times New Roman", Times, serif';
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+}
+
 #author {
     font-family: 'Brush Script MT', cursive;
     position: absolute;

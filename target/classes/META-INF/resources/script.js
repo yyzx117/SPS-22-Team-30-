@@ -11,16 +11,17 @@ function sendRandomLetters() {
     console.log(letter);
 }
 
+
 // SHOW THE SNAPSHOT.
 takeSnapShot = function () {
     Webcam.snap(function (data_uri) {
         document.getElementById("uploadPreview").style.display = "none";
         document.getElementById("snapShot").style.display = "inline-block";
         document.getElementById('snapShot').innerHTML = 
-            '<img src="' + data_uri + '" width=40% height=40% />';
-            
+            '<img src="' + data_uri + '" id="snapPic" width=40% height=40% />';
+        localStorage.setItem("snap_upload", data_uri);
+        localStorage.setItem("ptype", "snap");
     });
-    localStorage.setItem('snap', data_uri);
 
 }
 
@@ -30,18 +31,40 @@ function PreviewImage() {
     oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
 
     oFReader.onload = function (e) {
-        /*document.getElementById("uploadPreview").style.display = "inline-block" 
-        document.getElementById("uploadPreview").src = oFREvent.target.result;*/
-
         document.getElementById("snapShot").style.display = "none";
         document.getElementById("uploadPreview").style.display = "inline-block";
-        document.getElementById("uploadPreview").innerHTML = '<img src="'+e.target.result+'" height=30% width=30%>';
+        document.getElementById("uploadPreview").innerHTML = '<img src="'+e.target.result+'" id="filePic" height=30% width=30%>';
+        localStorage.setItem("file_upload", e.target.result);
+        localStorage.setItem("ptype", "upload");
     };
+    
+
+}
+//Store Upload File
+
+
+
+//JUMP TO PAGE 2
+function jumpToPage2() {
+    window.location.href="page_2.html";
 }
 
+//Store Upload File
 function ConvertImage(){
     
-    convert = document.getElementById('convertPic');
-    convert.innerHTML = '<img src="' + localStorage.getItem('snap'); + '" width="70px" height="50px" />';
-    console.log(convertSnap);
+    if(localStorage.getItem('ptype') == "upload"){
+        imgData = localStorage.getItem('file_upload');
+        fileImg = document.getElementById('filepic');
+        fileImg.src = imgData;
+        console.log('Convert UploadFile')
+    }
+    if(localStorage.getItem('ptype') == "snap"){
+        imgData = localStorage.getItem('snap_upload');
+        fileImg = document.getElementById('filepic');
+        fileImg.src = imgData;
+        console.log('Convert Snapshop')
+    }
 }
+// convert = document.getElementById('convertPic');
+// convert.innerHTML = '<img src="' + localStorage.getItem('snap'); + '" width="70px" height="50px" />';
+// console.log(convertSnap);
