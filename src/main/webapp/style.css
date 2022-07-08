@@ -104,11 +104,17 @@ input::file-selector-button {
     text-align: center;
     color: white;
   }
-
-/* Centered text */
 .centered {
     position: absolute;
     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Centered text */
+#center {
+    position: absolute;
+    top: 360%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
