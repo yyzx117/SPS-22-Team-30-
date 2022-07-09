@@ -34,6 +34,11 @@ body {
     top: 150px;
     left: 120px;
 }
+#end {
+    position:absolute;
+    top: 600px;
+    left: 120px;
+}
 
 #your-asl {
     font-family: 'Times New Roman", Times, serif';
@@ -50,7 +55,6 @@ body {
     top: 70px;
     left: 45px;
 }
-
 
 #camera {
     position: absolute;
@@ -72,6 +76,20 @@ body {
     top: 470px;
     left: 310px;
 }
+#RetakeAPicture{
+    position: absolute;
+    top: 470px;
+    left: 120px;
+    height: 50px;
+    width: 100px;
+    border-radius: 10%;
+}
+#DownloadYourResults{
+    position: absolute;
+    top: 470px;
+    left: 310px;
+}
+
 input::file-selector-button {
     height: 50px;
     width: 100px;

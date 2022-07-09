@@ -38,16 +38,33 @@ function PreviewImage() {
         localStorage.setItem("ptype", "upload");
     };
     
-
 }
-//Store Upload File
 
-
+//JUMP TO PAGE 1
+function jumpToPage1() {
+    window.location.href="page_1.html";
+}
 
 //JUMP TO PAGE 2
 function jumpToPage2() {
     window.location.href="page_2.html";
 }
+//DOWNLOAD PAGE
+var doc = new jsPDF(); 
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+//margins.left, // x coord   margins.top, { // y coord
+function download() {
+    doc.fromHTML($('#mid').html(), 15, 15, {
+        'width': 700,
+        'elementHandlers': specialElementHandlers
+    });
+    doc.save('ASL_result.pdf');
+};
+
 
 //Store Upload File
 function ConvertImage(){
