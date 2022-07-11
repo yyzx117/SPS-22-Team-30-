@@ -1,58 +1,43 @@
 <!doctype html>
 <html>
 <head>
-    <title>Capture picture from your webcam</title>
+    <title>ASL Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>    
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
-    <script src="script.js"></script>
 </head>
 
 <body>
-    <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
-    <p>Hello</p>
-    <!--FOR THE SNAPSHOT-->
-    <input type="button" value="Take a Snap" id="btPic" onclick="takeSnapShot(); sendRandomLetters();" /> 
-    <p id="snapShot"></p>
-    <div id="letter-container"></div>
-    <!--FOR UPLOADING IMAGES-->
-    <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
-    <br>
-    <img id="uploadPreview" style="width: 100px; height: 100px; display: none;" />
+    <p></p>
+    <div id="content">
+        <div id="intro">
+            <p id="asl"> ASL Translator</p>
+            <P id="author"> by SPS 22' Team 30</P>
+        </div>
+        <div id="camera"></div>
+        <!--FOR THE SNAPSHOT-->
+        <input id="take" type="button" value="Take a Snap" id="snapPic" onclick="takeSnapShot()" /> 
+        <p id="snapShot"></p>
+        <!--FOR UPLOADING IMAGES-->
+        <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage()" />
+        <p id="uploadPreview"></p>
 
-    <br>
+        <!--JUMP TO PAGE 2-->
+        <input id="submit" type="button" value="Submit" onclick="jumpToPage2()"/>
+    </div>
 </body>
 
 <script>
     // CAMERA SETTINGS.
     Webcam.set({
-        width: 220,
-        height: 190,
+        width: 396,
+        height: 343,
         image_format: 'jpeg',
         jpeg_quality: 100
     });
     Webcam.attach('#camera');
 
-    // SHOW THE SNAPSHOT.
-    takeSnapShot = function () {
-        Webcam.snap(function (data_uri) {
-            document.getElementById('snapShot').innerHTML = 
-                '<img src="' + data_uri + '" width="70px" height="50px" />';
-        });
-        
-    }
-    // SHOW THE SNAPSHOT File.
-    function PreviewImage() {
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
-
-        oFReader.onload = function (oFREvent) {
-            document.getElementById("uploadPreview").style.display = "inline-block" 
-            document.getElementById("uploadPreview").src = oFREvent.target.result;
-        };
-    };
-
+    localStorage.setItem()
+    localStorage.setItem("firstname", "Smith"); 
 </script>
-
-<a href="page_2.html">Page 2</a>
-
-
 </html>
