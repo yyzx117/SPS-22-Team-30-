@@ -42,7 +42,7 @@ function PreviewImage() {
 
 //JUMP TO PAGE 1
 function jumpToPage1() {
-    window.location.href="page_1.html";
+    window.location.href="index.html";
 }
 
 //JUMP TO PAGE 2
