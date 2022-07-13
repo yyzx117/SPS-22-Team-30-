@@ -3,19 +3,33 @@
 
 <head>
     <title>ASL Translator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="learnASL.css">
     <script src="learnASL.js"></script>
 </head>
 
 <body>
     <p>Learn ASL</p>
     <p>Hello!</p>
-    <video width="320" height="240" autoplay loop>
-        <source src="./videos/hello.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <div class="helloVideo">
+        <video class="helloVideo" width="320" height="240" autoplay loop muted>
+            <source src="./videos/hello.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
-    <p>Choose from the buttons below!</p>
+    <div id="light">
+        <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+        <video id="VisaChipCardVideo" width="600" controls>
+            <source src="./videos/hello.mp4" type="video/mp4">
+            <!--Browser does not support <video> tag -->
+        </video>
+    </div>
+
+    <div id="fade" onClick="lightbox_close();"></div>
+
+    <div>
+        <a href="#" onclick="lightbox_open();">Watch video</a>
+    </div>
 
 </body>
 
