@@ -22,7 +22,7 @@ public final class model extends HttpServlet {
 
         // load the model
         String simpleMlp = new ClassPathResource(
-                "alphabet_trained_model.h5").getFile().getPath();
+                "./ml-model/alphabet_trained_model.h5").getFile().getPath();
         MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(simpleMlp);
 
         String imgname = request.getParameter("filepic");
@@ -30,7 +30,7 @@ public final class model extends HttpServlet {
         reshaped = resizeImage("greyscale.jpg", 300, 300);
 
         // get the prediction
-        int prediction = (int) model.output(features).getDouble(0);
+        int prediction = (int) model.output(reshaped).getDouble(0);
         String letterPredicted = alphabet[prediction];
 
         response.setContentType("text/html;");
