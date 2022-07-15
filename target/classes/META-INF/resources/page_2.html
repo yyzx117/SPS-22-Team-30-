@@ -5,41 +5,40 @@
     <title>Your Translation: "ASL Translation (from function)</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="xepOnline.jqPlugin.js"></script>
 
-   
-    
+
+
 </head>
 <body>
-    <div id="content2">
-        <div id="intro">
-            <p id="asl"> ASL Translator</p>
-            <P id="author"> by SPS 22' Team 30</P>
-        </div>
-        <div id="mid">
-            <p id="your-asl"> Your Translation: ASL Translation (from function)</p>
-            <div id="center">
-                <div class="container">
-                    <!--Image from Page_1-->
-                    <img src = "" id="filepic" height=343 width=343>
-                    <!--Add ASL Translate from that-->
-                    <div class="centered">
-                        <p id = "letter-container">
-                    </div>
-                </div>
+    <div id="content">
+        <img src="./images/asl.jpg" id="asl" style="width:17%;height:10%" class="center"/>
+        <center id="asl"> ASL Translator</center>
+        <center id="author"> by SPS 22' Team 30</center>
+        <br>
+        <br>
+        <center id="your-asl"> Your Translation: ASL Translation (from function)</center>
+
+        <div class="result">
+            <!--Image from Page_1-->
+            <img src = "" id="filepic" height=50% width=50%>
+            <!--Add ASL Translate from that-->
+            <div class="centered">
+                <p id = "letter-container">
             </div>
         </div>
         <div id="editor"></div>
         <!--Add GO BACK FUNCTION-->
-        <div id = "end">
-            <input id="Retake A Picture" type="button" value="Retake A Picture" onclick="jumpToPage1()"/>
+        <br>
+        <br>
+        <div class="buttons">
+            <input id="RetakeAPicture" type="button" value="Retake A Picture" class = "button" onclick="jumpToPage1()"/>
             <!--FOR DOWNLOADING PICTURE-->
-            <input id="Download Your Results" type="button" value="Download Your Results" onclick="download()"/>
-
+            <input id="DownloadYourResults" type="button" value="Download Results" class = "button" onclick="download()"/>
         </div>
-    </div>
-    <div>
-        <img src="./images/asl.jpg" id="background"/>
     </div>
 </body>
 
