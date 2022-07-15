@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
 
 /* Learn ASL Below */ 
+#outer {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
 .helloVideo {
     width: 1000px;
     border-radius: 10px; 
@@ -8,67 +15,16 @@
     display: block;
     margin: 0 auto;
 }
+.break {
+    display: block;
+    content: "";
+    margin: 50px;
+    line-height: 150%;
+ }
 
-#fade {
-    display: none;
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    z-index: 1001;
-    -moz-opacity: 0.8;
-    opacity: .80;
-    filter: alpha(opacity=80);
-  }
-  
-  #light {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    max-width: 600px;
-    max-height: 360px;
-    margin-left: -300px;
-    margin-top: -180px;
-    border: 2px solid #FFF;
-    background: #FFF;
-    z-index: 1002;
-    overflow: visible;
-  }
-  
-  #boxclose {
-    cursor: pointer;
-    color: #fff;
-    border: 1px solid #AEAEAE;
-    border-radius: 3px;
-    background: #222222;
-    font-size: 31px;
-    font-weight: bold;
-    display: inline-block;
-    line-height: 0px;
-    padding: 11px 3px;
-    position: absolute;
-    right: 2px;
-    top: 2px;
-    z-index: 1002;
-    opacity: 0.9;
-  }
-  
-  .boxclose:before {
-    content: "x";
-  }
-  
-  #fade:hover ~ #boxclose {
-    display:none;
-  }
-  
-  .test:hover ~ .test2 {
-    display: none;
-  }
-
-/* CSS */
+#new {
+    text-align: left;
+}
 .button-85 {
   padding: 0.6em 2em;
   border: none;
@@ -76,14 +32,13 @@
   color: rgb(255, 255, 255);
   background: #111;
   height: 40px;
-  cursor: pointer;
   position: relative;
   z-index: 0;
   border-radius: 10px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  text-decoration:none;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
