@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>ASL Translator</title>
+    <p>hello</p>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>   
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
@@ -13,7 +14,11 @@
         <center id="asl"> ASL Translator</center>
         <center id="author"> by SPS 22' Team 30</center>
 
-        
+        <div class="tabs">
+            <input id="Translate" type="button" value="Translate" class = "untab" /> 
+            <!--FOR UPLOADING IMAGES-->
+            <input id="Learn" type="button" value="Learn" class = "tab" onchange="jumpTolearnASL()" />
+        </div>
 
         <div id="camera"></div>
         <!--FOR THE SNAPSHOT-->

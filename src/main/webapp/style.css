@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
 body {
     background-color: white;
 }
@@ -17,16 +19,75 @@ body {
     top: 10px;
     left: 200px;
 }
-#mid {
-    position:absolute;
-    top: 150px;
-    left: 120px;
+.tabs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0;
+    width: 600px;
+    position: relative;
+    left: 25%;
+    top: 20px;
 }
-#end {
-    position:absolute;
-    top: 600px;
-    left: 120px;
+
+.tab{
+    font-family: 'League Spartan', sans-serif;
+    appearance: button;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    text-decoration: none;
+    display: inline-block;
+    padding: 2px 8px;
+    margin: auto;
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(210, 14, 236);
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    border: 0;
+    padding: 1px 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: static;
+    text-transform: uppercase;    
 }
+.untab{
+    font-family: 'League Spartan', sans-serif;
+    appearance: button;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    text-decoration: none;
+    display: inline-block;
+    padding: 2px 8px;
+    margin: auto;
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgb(224, 19, 231);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    border: 0;
+    padding: 1px 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: static;
+    text-transform: uppercase;
+}
+.tab:hover {
+    background: white;
+    color: rgb(224, 19, 231);
+  }
+
+
 /* Specific Features Page 1*/
 #asl {
     font-family: 'Brush Script MT', cursive;
