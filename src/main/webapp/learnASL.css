@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
 
+#link {
+    text-align: center;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 30px;
+    color: #000000;
+}
+
 /* Learn ASL Below */ 
 #outer {
     width: 200px;
@@ -30,7 +37,7 @@
   border: none;
   outline: none;
   color: rgb(255, 255, 255);
-  background: #111;
+  background: #000000;
   height: 40px;
   position: relative;
   z-index: 0;
