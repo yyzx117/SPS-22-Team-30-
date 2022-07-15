@@ -107,6 +107,15 @@ function ConvertImage(){
         console.log('Convert Snapshop')
     }
 }
+async function runModel() {
+    const modelpic = document.getElementById('filepic');
+    const responseFromServer = await fetch('/model');
+    const textFromResponse = await responseFromServer.text();
+
+    const lettertext = document.getElementById('letter-container');
+    lettertext.innerText = textFromResponse;
+}
+
 // convert = document.getElementById('convertPic');
 // convert.innerHTML = '<img src="' + localStorage.getItem('snap'); + '" width="70px" height="50px" />';
 // console.log(convertSnap);
