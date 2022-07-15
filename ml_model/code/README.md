@@ -5,6 +5,7 @@ To run the test code you simply need to run:
 
 The outcome is:
 
+```
 The letter is supposed to be: R_test.jpg
 The Letter is: R
 The letter is supposed to be: S_test.jpg
@@ -53,3 +54,4 @@ The letter is supposed to be: V_test.jpg
 The Letter is: V
 The letter is supposed to be: W_test.jpg
 The Letter is: W
+```
