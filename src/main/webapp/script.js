@@ -51,8 +51,10 @@ function jumpToPage2() {
     window.location.href="page_2.html";
 }
 
-
-
+//JUMP TO PAGE 2
+function jumpTolearnASL() {
+    window.location.href="learnASL.html";
+}
 
 
 function download() {
