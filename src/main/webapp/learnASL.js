@@ -7,17 +7,17 @@ window.document.onkeydown = function (e) {
     }
 }
 
-function lightbox_open() {
-    var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+function lightbox_open_hey() {
+    var lightBoxVideo = document.getElementById("heyVideo");
     window.scrollTo(0, 0);
-    document.getElementById('light').style.display = 'block';
-    document.getElementById('fade').style.display = 'block';
+    document.getElementById('hey_light').style.display = 'block';
+    document.getElementById('hey_fade').style.display = 'block';
     lightBoxVideo.play();
 }
 
-function lightbox_close() {
-    var lightBoxVideo = document.getElementById("VisaChipCardVideo");
-    document.getElementById('light').style.display = 'none';
-    document.getElementById('fade').style.display = 'none';
+function lightbox_close_hey() {
+    var lightBoxVideo = document.getElementById("heyVideo");
+    document.getElementById('hey_light').style.display = 'none';
+    document.getElementById('hey_fade').style.display = 'none';
     lightBoxVideo.pause();
 }
