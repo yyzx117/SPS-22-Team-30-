@@ -1,14 +1,22 @@
-package main.java.com.google.sps.servlets;
+package com.google.sps.servlets;
 
+import org.datavec.image.loader.ImageLoader;
 import org.deeplearning4j.nn.modelimport.keras.KerasModelImport;
+import org.deeplearning4j.nn.modelimport.keras.exceptions.InvalidKerasConfigurationException;
+import org.deeplearning4j.nn.modelimport.keras.exceptions.UnsupportedKerasConfigurationException;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.nd4j.linalg.api.ndarray.INDArray;
-import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.io.ClassPathResource;
+
 import java.io.File;
 import java.io.IOException;
 import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
+import java.awt.Graphics2D;
+import javax.imageio.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/model")
 
@@ -23,25 +31,38 @@ public final class model extends HttpServlet {
         // load the model
         String simpleMlp = new ClassPathResource(
                 "./ml-model/alphabet_trained_model.h5").getFile().getPath();
-        MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(simpleMlp);
+        MultiLayerNetwork model;
+        try {
+            model = KerasModelImport.importKerasSequentialModelAndWeights(simpleMlp);
 
-        String imgname = request.getParameter("filepic");
-        greyscale(imgname);
-        reshaped = resizeImage("greyscale.jpg", 300, 300);
-
-        // get the prediction
-        int prediction = (int) model.output(reshaped).getDouble(0);
-        String letterPredicted = alphabet[prediction];
-
-        response.setContentType("text/html;");
-        response.getWriter().println("Translated to:" + letterPredicted);
+            // Read and gray out the image
+            String imgname = request.getParameter("filepic");
+            BufferedImage grayedImage = grayscale(imgname);
+    
+            //Resize the image
+            BufferedImage resizedImage = resizeImage(grayedImage, 300, 300);
+    
+            ImageLoader loader = new ImageLoader();
+            INDArray imgArr = loader.asMatrix(resizedImage).reshape(-1, 300, 300);
+    
+            // get the prediction
+            int prediction = (int) model.output(imgArr).getDouble(0);
+            String letterPredicted = alphabet[prediction];
+    
+            response.setContentType("text/html;");
+            response.getWriter().println("Translated to:" + letterPredicted);
+        } catch (InvalidKerasConfigurationException | UnsupportedKerasConfigurationException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+      
     }
 
     // Take in the image and gray it out Link on how to gray scale an image:
     // https://dyclassroom.com/image-processing-project/how-to-convert-a-color-image-into-grayscale-image-in-java
-    private void grayscale(String resimg) {
+    private BufferedImage grayscale(String resimg) throws IOException {
         File f = new File(resimg);
-        img = ImageIO.read(f);
+        BufferedImage img = ImageIO.read(f);
 
         // get image width and height
         int width = img.getWidth();
@@ -69,7 +90,7 @@ public final class model extends HttpServlet {
         // write image
         f = new File("SPS-22-Team-30-/src/main/webapp/Results/greyscale.jpg");
         ImageIO.write(img, "jpg", f);
-
+        return img;
     }
     // class ends here
 
