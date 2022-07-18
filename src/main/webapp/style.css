@@ -32,30 +32,31 @@ body {
 
 .tab{
     font-family: 'League Spartan', sans-serif;
-    appearance: button;
-    -moz-appearance: button;
-    -webkit-appearance: button;
     text-decoration: none;
-    display: inline-block;
     padding: 2px 8px;
     margin: auto;
     display: block;
     width: 200px;
-    height: 50px;
-    line-height: 50px;
+    height: 30px;
+    line-height: 30px;
     background-color: rgb(255, 255, 255);
     color: rgb(210, 14, 236);
     font-size: 11px;
     font-weight: 500;
     text-align: center;
     border: 0;
-    padding: 1px 20px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     position: static;
-    text-transform: uppercase;    
+    text-transform: uppercase;
+    cursor:pointer;
 }
+.tab:hover {
+    background: rgb(210, 14, 236);
+    color: white;
+}
+
 .untab{
     font-family: 'League Spartan', sans-serif;
     appearance: button;
@@ -67,8 +68,8 @@ body {
     margin: auto;
     display: block;
     width: 200px;
-    height: 50px;
-    line-height: 50px;
+    height: 30px;
+    line-height: 30px;
     background-color: rgb(224, 19, 231);
     color: white;
     font-size: 11px;
@@ -82,10 +83,7 @@ body {
     position: static;
     text-transform: uppercase;
 }
-.tab:hover {
-    background: white;
-    color: rgb(224, 19, 231);
-  }
+
 
 
 /* Specific Features Page 1*/
