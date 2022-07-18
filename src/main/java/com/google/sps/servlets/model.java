@@ -19,8 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/model")
-
-public final class model extends HttpServlet {
+public final class Model extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -28,34 +27,40 @@ public final class model extends HttpServlet {
         String[] alphabet = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
                 "S", "T", "U", "V", "W", "X", "Y", "Z", "nothing", "space" };
 
-        // load the model
-        String simpleMlp = new ClassPathResource(
-                "./ml-model/alphabet_trained_model.h5").getFile().getPath();
-        MultiLayerNetwork model;
-        try {
-            model = KerasModelImport.importKerasSequentialModelAndWeights(simpleMlp);
-
-            // Read and gray out the image
-            String imgname = request.getParameter("filepic");
-            BufferedImage grayedImage = grayscale(imgname);
-    
-            //Resize the image
-            BufferedImage resizedImage = resizeImage(grayedImage, 300, 300);
-    
-            ImageLoader loader = new ImageLoader();
-            INDArray imgArr = loader.asMatrix(resizedImage).reshape(-1, 300, 300);
-    
-            // get the prediction
-            int prediction = (int) model.output(imgArr).getDouble(0);
-            String letterPredicted = alphabet[prediction];
-    
-            response.setContentType("text/html;");
-            response.getWriter().println("Translated to:" + letterPredicted);
-        } catch (InvalidKerasConfigurationException | UnsupportedKerasConfigurationException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-      
+        /*
+         * // load the model
+         * String simpleMlp = new ClassPathResource(
+         * "./ml-model/alphabet_trained_model.h5").getFile().getPath();
+         * MultiLayerNetwork model;
+         * try {
+         * model = KerasModelImport.importKerasSequentialModelAndWeights(simpleMlp);
+         * 
+         * // Read and gray out the image
+         * String imgname = request.getParameter("formData");
+         * BufferedImage grayedImage = grayscale(imgname);
+         * 
+         * //Resize the image
+         * BufferedImage resizedImage = resizeImage(grayedImage, 300, 300);
+         * 
+         * ImageLoader loader = new ImageLoader();
+         * INDArray imgArr = loader.asMatrix(resizedImage).reshape(-1, 300, 300);
+         * 
+         * // get the prediction
+         * int prediction = (int) model.output(imgArr).getDouble(0);
+         * String letterPredicted = alphabet[prediction];
+         * 
+         * response.setContentType("text/html;");
+         * response.getWriter().println("Translated to:" + imgname);
+         * System.out.println(imgname);
+         * } catch (InvalidKerasConfigurationException |
+         * UnsupportedKerasConfigurationException e) {
+         * // TODO Auto-generated catch block
+         * e.printStackTrace();
+         * }
+         */
+        String imgname = request.getParameter("formData");
+        response.setContentType("text/html");
+        response.getWriter().println("x");
     }
 
     // Take in the image and gray it out Link on how to gray scale an image:
