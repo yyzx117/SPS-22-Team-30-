@@ -21,3 +21,8 @@ function lightbox_close_hey() {
     document.getElementById('hey_fade').style.display = 'none';
     lightBoxVideo.pause();
 }
+
+//JUMP TO PAGE 1
+function jumpToPage1() {
+    window.location.href="index.html";
+}
