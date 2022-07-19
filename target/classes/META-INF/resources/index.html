@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>ASL Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>   
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <img src="./images/asl.jpg" id="asl" style="width:17%;height:10%" class="center"/>
+        <center id="asl"> ASL Translator</center>
+        <center id="author"> by SPS 22' Team 30</center>
+        
+        <div class="tabs">
+            <input id="Translate" type="button" class="untab" value="Translate" /> 
+            <!--FOR UPLOADING IMAGES-->
+            <input id="Learn" type="button" class="tab" value="Learn ASL" onclick="jumpTolearnASL()" />
+        </div>
+        <br>
+        <br>
+        
+        <div id="camera"></div>
+        <!--FOR THE SNAPSHOT-->
+        <div class="buttons">
+            <input id="take" type="button" value="Take a Snap" class = "button" onclick="takeSnapShot()" /> 
+            <!--FOR UPLOADING IMAGES-->
+            <input id="uploadImage" type="file" name="myPhoto" class = "button" onchange="PreviewImage()" />
+        </div>
+        <div class="uploaded">
+            <p id="snapShot"></p>
+            <p id="uploadPreview"></p>
+        </div>
+        
+        <br>
+        <br>
+        <!--JUMP TO PAGE 2-->
+        <input id="submit" type="button" value="Submit" class="button" onclick="jumpToPage2()"/>
+    </div>
+    
+</body>
+
+<script>
+    // CAMERA SETTINGS.
+    Webcam.set({
+        width: 530,
+        height: 460,
+        image_format: 'jpeg',
+        jpeg_quality: 100
+    });
+    Webcam.attach('#camera');
+
+    localStorage.setItem()
+    localStorage.setItem("firstname", "Smith"); 
+</script>
+</html>
