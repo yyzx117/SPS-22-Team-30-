@@ -64,21 +64,21 @@
     <dependency>      
         <groupId>org.deeplearning4j</groupId>      
         <artifactId>deeplearning4j-core</artifactId>
-        <version>1.0.0-beta2</version>    
+        <version>1.0.0-beta6</version>    
     </dependency>   
 
     <!-- DL4J Model-->
     <dependency>      
         <groupId>org.deeplearning4j</groupId>      
         <artifactId>deeplearning4j-modelimport</artifactId>      
-        <version>1.0.0-beta2</version>    
+        <version>1.0.0-beta6</version>    
     </dependency>      
 
     <!-- ND4J NP-->
     <dependency>      
         <groupId>org.nd4j</groupId>      
         <artifactId>nd4j-native-platform</artifactId>
-        <version>1.0.0-beta2</version>    
+        <version>1.0.0-beta6</version>    
     </dependency>
 
     

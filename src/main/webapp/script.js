@@ -95,9 +95,11 @@ function ConvertImage() {
     }
 }
 async function runModel() {
-    // const modelpic = document.getElementById('filepic');
+    const modelpic = document.getElementById('filepic');
+    const imgData = modelpic.src;
     var formData = new FormData()
-    formData.append('letter', 'x')
+    formData.append('image_data', imgData)
+    console.log(imgData);
 
     const responseFromServer = await fetch('/model', {
         method: 'POST',
