@@ -66,7 +66,6 @@ public final class Model extends HttpServlet {
             // System.out.println(imgname);
         } catch (InvalidKerasConfigurationException |
             UnsupportedKerasConfigurationException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
